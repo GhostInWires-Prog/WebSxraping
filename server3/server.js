@@ -30,5 +30,6 @@ app.get("/api/scape",async (req, res)=>
   }
 });
 app.listen(3000,()=>{{
-  console.log("Server started on port http://localhost3000")
+  console.log("Server started on port http://localhost:3000")
+  console.log("For Scaping Results Click This http://localhost:3000/api/scape")
 }});
