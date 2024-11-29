@@ -1,0 +1,25 @@
+<div>
+  <h1>BBC Headers</h1>
+  <ul>
+    @for(header of headers; track header)
+    {
+      <li>
+        {{header}}
+      </li>
+    }
+    @empty {
+      <li>No Header Found</li>
+    }
+    <h1>BBC Paragraphs</h1>
+
+    @for(para of paragraphs; track para)
+    {
+      <li>
+        {{para}}
+      </li>
+    }
+    @empty {
+      <li>No Paras Found</li>
+    }
+  </ul>
+</div>
