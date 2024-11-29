@@ -1,17 +1,17 @@
 <div>
   <h1>BBC Headers</h1>
   <ul>
-    @for(header of headers; track header)
+    @for (header of headers; track header )
     {
-      <li>
-        {{header}}
-      </li>
+      <li>{{ header }}</li>
     }
+
     @empty {
       <li>No Header Found</li>
     }
+    </ul>
     <h1>BBC Paragraphs</h1>
-
+<ul>
     @for(para of paragraphs; track para)
     {
       <li>

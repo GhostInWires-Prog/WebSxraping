@@ -20,6 +20,7 @@ export class ScrapeComponent {
   {
     this.http.get<{headers: string[],paragraphs:string[]}>(" http://localhost:3000/api/scape")
     .subscribe(data=>{
+      console.log(data);
       this.headers=data.headers;
       this.paragraphs=data.paragraphs;
     },

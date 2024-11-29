@@ -22,7 +22,8 @@ app.get("/api/scape",async (req, res)=>
       paragraphs.push($(element).text().trim());
     })
     //Now both Arrays Holding Values
-    res.json({header,paragraphs})
+    res.json({ headers: header, paragraphs });
+
   }
   catch(error)
   {
