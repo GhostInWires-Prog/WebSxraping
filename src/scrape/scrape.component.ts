@@ -8,7 +8,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
   templateUrl:'./scrape.component.html',
   styleUrl: './scrape.component.css'
 })
-export class ScrapeComponent {
+export class ScrapeComponent
+{
   headers :string[]=[];
   paragraphs :string[]=[];
   constructor(private http:HttpClient) {
@@ -18,11 +19,11 @@ export class ScrapeComponent {
 
   fetchdata()
   {
-    this.http.get<{headers: string[],paragraphs:string[]}>(" http://localhost:3000/api/scape")
+    this.http.get<{headers: string[],paragraphs:string[]}>("http://localhost:3000/api/scape")
     .subscribe(data=>{
       console.log(data);
-      this.headers=data.headers;
-      this.paragraphs=data.paragraphs;
+      this.headers=data.headers??[];
+      this.paragraphs=data.paragraphs??[];
     },
     error=>{
       console.log(error);
@@ -30,7 +31,4 @@ export class ScrapeComponent {
     )
 
   }
-
-
-
 }
