@@ -1,10 +1,10 @@
 //this Will Handle My Server Side
-const express=require("express")
-const axios =require("axios");// this will help me to get files
-const cheerio=require("cheerio")// to handle the html page values like paras
-const cors=require("cors")
-const app=express()
+import express from "express"; // Import express
+import axios from "axios"; // This will help me to get files
+import cheerio from "cheerio"; // To handle the HTML page values like paragraphs
+import cors from "cors"; // To enable CORS
 
+const app=express()
 app.use(cors())// to handle cors Errors
 
 app.get("/api/scape",async (req, res)=>
