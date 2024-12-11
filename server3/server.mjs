@@ -1,7 +1,7 @@
 //this Will Handle My Server Side
 import express from "express"; // Import express
 import axios from "axios"; // This will help me to get files
-import cheerio from "cheerio"; // To handle the HTML page values like paragraphs
+import * as cheerio from "cheerio"; // To handle the HTML page values like paragraphs
 import cors from "cors"; // To enable CORS
 
 const app=express()
@@ -10,6 +10,7 @@ app.use(cors())// to handle cors Errors
 app.get("/api/scape",async (req, res)=>
 {
   try {
+
     const {data} = await axios.get("https://www.bbc.com/");//Get Data From Server
     const $ = cheerio.load(data);// Will Load DATA iN cHEERIO
     const header = [];//Made Array Of Header Later WIll Be Populated
