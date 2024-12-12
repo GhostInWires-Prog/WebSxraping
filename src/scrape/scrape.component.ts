@@ -17,18 +17,15 @@ export class ScrapeComponent
     this.fetchdata()
   }
 
-  fetchdata()
-  {
-    this.http.get<{headers: string[],paragraphs:string[]}>("http://localhost:3000/api/scape")
-    .subscribe(data=>{
-      console.log(data);
-      this.headers=data.headers??[];
-      this.paragraphs=data.paragraphs??[];
-    },
-    error=>{
-      console.log(error);
-    }
-    )
-
+  fetchdata() {
+    this.http.get<{ headers: string[]; paragraphs: string[] }>("http://localhost:3000/api/scape")
+      .subscribe((data: { headers: string[]; paragraphs: string[] }) => {
+          console.log(data);
+          this.headers = data.headers ?? [];
+          this.paragraphs = data.paragraphs ?? [];
+        },
+        (error) => {
+          console.error(error);
+        });
   }
 }
